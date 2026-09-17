@@ -45,6 +45,10 @@ jobs:
     - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
     - name: Lint Rules
       run: node .github/workflows/lint-scripts/password-rules-parse.js
+    - name: Test Password Rules Parser
+      run: ./tools/PasswordRulesParser/run-tests.sh
+    - name: Test Pattern Converter
+      run: ./tools/PatternRegexpToPasswordRulesConverter/run-tests.sh
 
   websites-shared-credentials:
     runs-on: ubuntu-latest
